@@ -16,4 +16,12 @@ class RegionManagementController extends Controller
     public function index(){
         return view('region.manage');
     }
+
+    public function store(Request $request){
+        if ($request->post()){
+            return $request->all();
+        }else{
+            return back();
+        }
+    }
 }

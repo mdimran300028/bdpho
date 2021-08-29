@@ -8,3 +8,7 @@
     @include('region.tables.region-list')
     <!-- end row -->
 @endsection
+
+@section('modal-content')
+    @include('region.modals.add-form')
+@endsection

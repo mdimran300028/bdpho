@@ -20,6 +20,12 @@ Route::get('/region', [
     'as'=>'region',
     'middleware'=>['auth:sanctum', 'verified']
 ]);
+
+Route::any('/region-add', [
+    'uses'=>'App\Http\Controllers\RegionManagementController@store',
+    'as'=>'region-add',
+    'middleware'=>['auth:sanctum', 'verified']
+]);
 //=================Region Management Routes End===================//
 
 //Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
