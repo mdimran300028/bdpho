@@ -94,7 +94,7 @@
                         <span>Setting Module</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#">Manage Region</a></li>
+                        <li><a href="{{ route('region') }}">Manage Region</a></li>
                         <li><a href="#">Manage Division</a></li>
                         <li><a href="#">Manage Category</a></li>
                         <li><a href="#">Manage Partner</a></li>

@@ -14,6 +14,14 @@ Route::get('/dashboard', [
     'middleware'=>['auth:sanctum', 'verified']
 ]);
 
+//=================Region Management Routes Start=================//
+Route::get('/region', [
+    'uses'=>'App\Http\Controllers\RegionManagementController@index',
+    'as'=>'region',
+    'middleware'=>['auth:sanctum', 'verified']
+]);
+//=================Region Management Routes End===================//
+
 //Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //    return view('dashboard');
 //})->name('dashboard');
