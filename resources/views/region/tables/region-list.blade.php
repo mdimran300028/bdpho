@@ -26,8 +26,12 @@
                             </td>
                             <td class="text-center">
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary btn-sm btn-rounded waves-effect waves-light" data-toggle="modal" data-target=".exampleModal">
-                                    View Details
+                                <button type="button" class="btn btn-info btn-sm waves-effect waves-light" data-toggle="modal" data-target=".exampleModal">
+                                    <i class="fa fa-edit"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-success btn-sm waves-effect waves-light" data-toggle="modal" data-target=".exampleModal">
+                                    <i class="fa fa-arrow-up"></i>
                                 </button>
                             </td>
                         </tr>
