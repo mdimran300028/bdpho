@@ -2,20 +2,52 @@
 use Illuminate\Support\Facades\Route;
 //use App\Http\Controllers\ColorController;
 
-Route::get('/', [
+Route::any('/', [
     'uses'=>'App\Http\Controllers\AdminLoginController@login',
     'as'=>'/',
     'middleware'=>['guest']
 ]);
 
-Route::get('/dashboard', [
+Route::any('/dashboard', [
     'uses'=>'App\Http\Controllers\AdminDashboardController@index',
     'as'=>'dashboard',
     'middleware'=>['auth:sanctum', 'verified']
 ]);
 
+//=================Division Management Routes Start===================//
+Route::any('/division', [
+    'uses'=>'App\Http\Controllers\DivisionManagementController@index',
+    'as'=>'division',
+    'middleware'=>['auth:sanctum', 'verified']
+]);
+
+Route::any('/division-add', [
+    'uses'=>'App\Http\Controllers\DivisionManagementController@store',
+    'as'=>'division-add',
+    'middleware'=>['auth:sanctum', 'verified']
+]);
+
+Route::any('/division-update', [
+    'uses'=>'App\Http\Controllers\DivisionManagementController@update',
+    'as'=>'division-update',
+    'middleware'=>['auth:sanctum', 'verified']
+]);
+
+Route::any('/division-delete/{id}', [
+    'uses'=>'App\Http\Controllers\DivisionManagementController@delete',
+    'as'=>'division-delete',
+    'middleware'=>['auth:sanctum', 'verified']
+]);
+
+Route::any('/update-division-status/{id}', [
+    'uses'=>'App\Http\Controllers\DivisionManagementController@updateStatus',
+    'as'=>'update-division-status',
+    'middleware'=>['auth:sanctum', 'verified']
+]);
+//=================Division Management Routes End===================//
+
 //=================Region Management Routes Start=================//
-Route::get('/region', [
+Route::any('/region', [
     'uses'=>'App\Http\Controllers\RegionManagementController@index',
     'as'=>'region',
     'middleware'=>['auth:sanctum', 'verified']

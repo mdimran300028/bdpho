@@ -5,10 +5,16 @@
 @section('active-breadcrumb-item') Region @endsection
 
 @section('content')
-    @include('region.tables.region-list')
+    @include('region.tables.list')
     <!-- end row -->
 @endsection
 
 @section('modal-content')
     @include('region.modals.add-form')
+@endsection
+
+
+
+@section('custom-script')
+    @include('region.includes.script')
 @endsection
