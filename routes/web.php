@@ -46,6 +46,38 @@ Route::any('/update-division-status/{id}', [
 ]);
 //=================Division Management Routes End===================//
 
+//=================District Management Routes Start===================//
+Route::any('/district', [
+    'uses'=>'App\Http\Controllers\DistrictManagementController@index',
+    'as'=>'district',
+    'middleware'=>['auth:sanctum', 'verified']
+]);
+
+Route::any('/district-add', [
+    'uses'=>'App\Http\Controllers\DistrictManagementController@store',
+    'as'=>'district-add',
+    'middleware'=>['auth:sanctum', 'verified']
+]);
+
+Route::any('/district-update', [
+    'uses'=>'App\Http\Controllers\DistrictManagementController@update',
+    'as'=>'district-update',
+    'middleware'=>['auth:sanctum', 'verified']
+]);
+
+Route::any('/district-delete/{id}', [
+    'uses'=>'App\Http\Controllers\DistrictManagementController@delete',
+    'as'=>'district-delete',
+    'middleware'=>['auth:sanctum', 'verified']
+]);
+
+Route::any('/update-district-status/{id}', [
+    'uses'=>'App\Http\Controllers\DistrictManagementController@updateStatus',
+    'as'=>'update-district-status',
+    'middleware'=>['auth:sanctum', 'verified']
+]);
+//=================District Management Routes End===================//
+
 //=================Region Management Routes Start=================//
 Route::any('/region', [
     'uses'=>'App\Http\Controllers\RegionManagementController@index',

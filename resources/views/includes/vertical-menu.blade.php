@@ -96,6 +96,7 @@
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('region') }}">Manage Region</a></li>
                         <li><a href="{{ route('division') }}">Manage Division</a></li>
+                        <li><a href="{{ route('district') }}">Manage District</a></li>
                         <li><a href="#">Manage Category</a></li>
                         <li><a href="#">Manage Partner</a></li>
                     </ul>

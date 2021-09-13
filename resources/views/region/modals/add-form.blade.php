@@ -25,9 +25,13 @@
             <label for="districts" class="col-md-2 col-sm-3 col-form-label">Districts </label>
             <div class="col-md-10 col-sm-9">
                 <select name="districts[]" class="select2 form-control select2-multiple" multiple="multiple" id="districts" style="width: 100%" data-placeholder="Choose. . . . .">
-                    <option value="1">Demo-1</option>
-                    <option value="2">Demo-2</option>
-                    <option value="3">Demo-3</option>
+                    @foreach($divisions as $division)
+                        <optgroup label="{{ $division->name }} Division:">
+                            @foreach($division->districts as $district)
+                                <option value="{{ $district->id }}">{{ $district->name }}</option>
+                            @endforeach
+                        </optgroup>
+                    @endforeach
                 </select>
             </div>
         </div>
