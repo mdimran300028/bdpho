@@ -7,13 +7,11 @@
 @section('content')
     @include('region.tables.list')
     <!-- end row -->
-@endsection
 
-@section('modal-content')
+    <!-- Include All Modals -->
     @include('region.modals.add-form')
+    @include('region.modals.edit-form')
 @endsection
-
-
 
 @section('custom-script')
     @include('region.includes.script')

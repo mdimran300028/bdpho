@@ -2,7 +2,7 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title mb-4">BDPhO Region List <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myModal">Add New</button></h4>
+                <h4 class="card-title mb-4">BDPhO Region List <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#add">Add New</button></h4>
                 <div class="table-responsive">
                     <table class="table table-centered table-nowrap mb-0">
                         <thead class="thead-light">
@@ -16,25 +16,42 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($regions as $region)
                         <tr>
-                            <td>1</td>
-                            <td>Dhaka</td>
-                            <td><a href="javascript: void(0);" class="text-body font-weight-bold">#SK2540</a> </td>
-                            <td>Dhaka, Faridpur, Madaripur, Jamalpur</td>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $region->name }}</td>
+                            <td>{{ $region->code }}</td>
                             <td>
-                                <span class="badge badge-pill badge-soft-success font-size-12">Active</span>
+                                <script>let districtId = []</script>
+                                @foreach($region->districts as $district)
+                                    {{ $district->name }}{{ $loop->iteration==count($region->districts)? '':', ' }}
+                                    <script> districtId[districtId.length] = Number({{ $district->id }}) </script>
+                                @endforeach</td>
+                            <td>
+                                <span class="badge badge-pill badge-soft-{{ $region->status==1?'success':'warning' }} font-size-12">{{ $region->status==1?'Active':'Inactive' }} </span>
                             </td>
                             <td class="text-center">
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-info btn-sm waves-effect waves-light" data-toggle="modal" data-target=".exampleModal">
+                                <button onclick="edit({
+                                    districtId:districtId,
+                                    name:'{{ $region->name }}',
+                                    code:'{{ $region->code }}',
+                                    status:'{{ $region->status }}',
+                                    id:'{{ $region->id }}'
+                                    })" class="btn btn-info btn-sm waves-effect waves-light">
                                     <i class="fa fa-edit"></i>
                                 </button>
 
-                                <button type="button" class="btn btn-success btn-sm waves-effect waves-light" data-toggle="modal" data-target=".exampleModal">
+                                <a href="{{ route('update-region-status',['id'=>$region->id]) }}" class="btn btn-{{ $region->status==1?'success':'warning' }} btn-sm waves-effect waves-light" >
                                     <i class="fa fa-arrow-up"></i>
-                                </button>
+                                </a>
+
+                                <a href="{{ route('region-delete',['id'=>$region->id]) }}" onclick="return confirm('If you really want to delete, press OK')" class="btn btn-danger btn-sm waves-effect waves-light" >
+                                    <i class="fa fa-trash-alt"></i>
+                                </a>
                             </td>
                         </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

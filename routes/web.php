@@ -90,6 +90,24 @@ Route::any('/region-add', [
     'as'=>'region-add',
     'middleware'=>['auth:sanctum', 'verified']
 ]);
+
+Route::any('/region-update', [
+    'uses'=>'App\Http\Controllers\RegionManagementController@update',
+    'as'=>'region-update',
+    'middleware'=>['auth:sanctum', 'verified']
+]);
+
+Route::any('/region-delete/{id}', [
+    'uses'=>'App\Http\Controllers\RegionManagementController@delete',
+    'as'=>'region-delete',
+    'middleware'=>['auth:sanctum', 'verified']
+]);
+
+Route::any('/update-region-status/{id}', [
+    'uses'=>'App\Http\Controllers\RegionManagementController@updateStatus',
+    'as'=>'update-region-status',
+    'middleware'=>['auth:sanctum', 'verified']
+]);
 //=================Region Management Routes End===================//
 
 //Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
