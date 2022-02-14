@@ -1,3 +1,101 @@
+@font-face {
+    font-family: SolaimanLipi;
+    src: url(../assets/fonts/SolaimanLipi.ttf);
+}
+
+@font-face {
+    font-family: Kalpurush;
+    src: url(../assets/fonts/Kalpurush.ttf);
+}
+
+@font-face {
+    font-family: BenSenHandwriting;
+    src: url(../assets/fonts/BenSenHandwriting.ttf);
+}
+.bf-1{font-family: SolaimanLipi; font-size: medium}
+.bf-2{font-family: Kalpurush; font-size: medium}
+.bf-cursive-1{font-family: BenSenHandwriting; font-size: medium}
+
+/*Text Colors*/
+.text-blue{color: #0061f2 !important;}
+.text-indigo{color: #5800e8 !important;}
+.text-purple{color: #6900c7 !important;}
+.text-pink{color: #e30059 !important;}
+.text-red{color: #e81500 !important;}
+.text-orange{color: #f76400 !important;}
+.text-yellow{color: #f4a100 !important;}
+.text-green{color: #00ac69 !important;}
+.text-teal{color: #00ba94 !important;}
+.text-cyan{color: #00cfd5 !important;}
+.text-white{color: #ffffff !important;}
+.text-gray{color: #687281 !important;}
+.text-gray-dark{color: #323f52 !important;}
+.text-primary{color: #0061f2 !important;}
+.text-secondary{color: #6900c7 !important;}
+.text-success{color: #00ac69 !important;}
+.text-info{color: #00cfd5 !important;}
+.text-warning{color: #f4a100 !important;}
+.text-danger{color: #e81500 !important;}
+.text-light{color: #eff3f9 !important;}
+.text-dark{color: #1f2d41 !important;}
+.text-black{color: #000000 !important;}
+.text-red-soft{color: #eec7c7 !important;}
+.text-orange-soft{color: #f1d6c7 !important;}
+.text-yellow-soft{color: #f0e3c7 !important;}
+.text-green-soft{color: #bfe5dc !important;}
+.text-teal-soft{color: #bfe8e5 !important;}
+.text-cyan-soft{color: #bfecf2 !important;}
+.text-blue-soft{color: #bfd6f8 !important;}
+.text-indigo-soft{color: #d1c2f6 !important;}
+.text-purple-soft{color: #d4c2ef !important;}
+.text-pink-soft{color: #edc2d9 !important;}
+.text-primary-soft{color: #bfd6f8 !important;}
+.text-secondary-soft{color: #d4c2ef !important;}
+.text-success-soft{color: #bfe5dc !important;}
+.text-info-soft{color: #bfecf2 !important;}
+.text-warning-soft{color: #f0e3c7 !important;}
+.text-danger-soft{color: #eec7c7 !important;}
+
+/*Background Colors*/
+.bg-blue{background-color: #0061f2 !important;}
+.bg-indigo{background-color: #5800e8 !important;}
+.bg-purple{background-color: #6900c7 !important;}
+.bg-pink{background-color: #e30059 !important;}
+.bg-red{background-color: #e81500 !important;}
+.bg-orange{background-color: #f76400 !important;}
+.bg-yellow{background-color: #f4a100 !important;}
+.bg-green{background-color: #00ac69 !important;}
+.bg-teal{background-color: #00ba94 !important;}
+.bg-cyan{background-color: #00cfd5 !important;}
+.bg-white{background-color: #ffffff !important;}
+.bg-gray{background-color: #687281 !important;}
+.bg-gray-dark{background-color: #323f52 !important;}
+.bg-primary{background-color: #0061f2 !important;}
+.bg-secondary{background-color: #6900c7 !important;}
+.bg-success{background-color: #00ac69 !important;}
+.bg-info{background-color: #00cfd5 !important;}
+.bg-warning{background-color: #f4a100 !important;}
+.bg-danger{background-color: #e81500 !important;}
+.bg-light{background-color: #eff3f9 !important;}
+.bg-dark{background-color: #1f2d41 !important;}
+.bg-black{background-color: #000000 !important;}
+.bg-red-soft{background-color: #eec7c7 !important;}
+.bg-orange-soft{background-color: #f1d6c7 !important;}
+.bg-yellow-soft{background-color: #f0e3c7 !important;}
+.bg-green-soft{background-color: #bfe5dc !important;}
+.bg-teal-soft{background-color: #bfe8e5 !important;}
+.bg-cyan-soft{background-color: #bfecf2 !important;}
+.bg-blue-soft{background-color: #bfd6f8 !important;}
+.bg-indigo-soft{background-color: #d1c2f6 !important;}
+.bg-purple-soft{background-color: #d4c2ef !important;}
+.bg-pink-soft{background-color: #edc2d9 !important;}
+.bg-primary-soft{background-color: #bfd6f8 !important;}
+.bg-secondary-soft{background-color: #d4c2ef !important;}
+.bg-success-soft{background-color: #bfe5dc !important;}
+.bg-info-soft{background-color: #bfecf2 !important;}
+.bg-warning-soft{background-color: #f0e3c7 !important;}
+.bg-danger-soft{background-color: #eec7c7 !important;}
+
 .logo img {
     vertical-align: middle;
     border-style: none;

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>@yield('title') | {{ config('app.name') }}</title>
+    <title>@yield('title') | {{ siteInfo('short_title') }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Muhammad Imran" name="author" />
     <!-- App favicon -->
@@ -20,6 +20,7 @@
 <div id="layout-wrapper">
     @include('includes.header')
     @include('includes.vertical-menu')
+    @include('includes.loader')
     <!-- ============================================================== -->
     <!-- Start main Content here -->
     <!-- ============================================================== -->

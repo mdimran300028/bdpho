@@ -8,7 +8,6 @@
     @include('district.tables.list')
     <!-- end row -->
 
-
     <!-- Include All Modals -->
     @include('district.modals.add-form')
     @include('district.modals.edit-form')

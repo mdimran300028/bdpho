@@ -16,55 +16,77 @@
                     </a>
                 </li>
 
+
+                    @if(Auth::user()->role=='s_admin' or Auth::user()->role=='admin')
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-user"></i>
-                        <span>User Module</span>
+                        <i class="fa fa-user-friends"></i>
+                        <span>Participants</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="ecommerce-products.html">Manage User Role</a></li>
-                        <li><a href="ecommerce-product-detail.html">Manage User</a></li>
+                        <li><a href="{{ route('district-wise-participants') }}">District Wise</a></li>
+                        <li><a href="{{ route('division-wise-participants') }}">Divisional</a></li>
+                        <li><a href="{{ route('category-wise-participants') }}">Category Wise</a></li>
+                        <li><a href="ecommerce-products.html">National</a></li>
+                        <li><a href="{{ route('participants-reg-no-edit') }}">Reg. No. Edit</a></li>
                     </ul>
                 </li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bxs-dashboard"></i>
-                        <span>General Module</span>
+                        <i class="bx bx-cog"></i>
+                        <span>Event Module</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#">Manage Committee</a></li>
-                        <li><a href="#">Manage Gallery</a></li>
-                        <li><a href="#">Manage Press Releases</a></li>
-                        <li><a href="#">Manage Notice</a></li>
-                        <li><a href="#">Manage Partner</a></li>
+                        <li><a href="{{ route('bdpho') }}">Manage Event</a></li>
+                        <li><a href="{{ route('round') }}">Manage Round</a></li>
+                        <li><a href="{{ route('notice') }}">Manage Notice</a></li>
+                        <li><a href="{{ route('pages') }}">Manage Pages</a></li>
                     </ul>
                 </li>
 
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-edit"></i>
-                        <span>Exam Module</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#">Manage Syllabus</a></li>
-                        <li><a href="#">Manage Question</a></li>
-                        <li><a href="#">Manage Result</a></li>
-                        <li><a href="#">Manage Past Papers</a></li>
-                        <li><a href="#">Manage Resources</a></li>
-                    </ul>
-                </li>
+
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-envelope"></i>
-                        <span>SMS Module</span>
+                        <span>SMS</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#">Single Message</a></li>
-                        <li><a href="#">Group Message</a></li>
+                        <li><a href="{{ route('district-wise-sms') }}">District Wise</a></li>
+                        <li><a href="{{ route('division-wise-sms') }}">Division Wise</a></li>
                     </ul>
                 </li>
+
+                    @if(Auth::user()->role=='s_admin')
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="bx bx-user"></i>
+                                <span>User Module</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{{ route('admin.roles.index') }}">Manage User Role</a></li>
+                                <li><a href="{{ route('users') }}">Manage User</a></li>
+                            </ul>
+                        </li>
+                    @endif
+                    <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="bx bx-edit"></i>
+                            <span>Exam Module</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li><a href="{{ route('syllabus') }}">Manage Syllabus</a></li>
+                            <li><a href="{{ route('question-paper') }}">Manage Question Paper</a></li>
+                            <li><a href="{{ route('question-images') }}">Manage Question Images</a></li>
+                            <li><a href="{{ route('division-wise-result') }}">Manage Result</a></li>
+                            <li><a href="{{ route('participant-selection') }}">Participant Selection</a></li>
+                            <li><a href="{{ route('selected-participant') }}">Selected Participants</a></li>
+                            <li><a href="{{ route('past-paper') }}">Manage Past Papers</a></li>
+                            <li><a href="#">Manage Resources</a></li>
+                            <li><a href="{{ route('exam-participant') }}">Exam Participant</a></li>
+                        </ul>
+                    </li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -77,16 +99,12 @@
                     </ul>
                 </li>
 
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-money"></i>
-                        <span>Account Module</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#">To Be Added</a></li>
-                        <li><a href="#">To Be Added</a></li>
-                    </ul>
-                </li>
+                    <li>
+                        <a href="{{ route('file-manager') }}" >
+                            <i class="bx bx-folder"></i>
+                            <span>Uploaded File Manager</span>
+                        </a>
+                    </li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -97,8 +115,14 @@
                         <li><a href="{{ route('division') }}">Manage Division</a></li>
                         <li><a href="{{ route('district') }}">Manage District</a></li>
                         <li><a href="{{ route('region') }}">Manage Region</a></li>
-                        <li><a href="#">Manage Category</a></li>
-                        <li><a href="#">Manage Partner</a></li>
+                        <li><a href="{{ route('class') }}">Manage Class</a></li>
+                        <li><a href="{{ route('category') }}">Manage Category</a></li>
+                        <li><a href="{{ route('central-member') }}">Manage Central Committee</a></li>
+                        <li><a href="{{ route('organizer') }}">Manage Organizer</a></li>
+                        <li><a href="{{ route('partner') }}">Manage Partner</a></li>
+                        <li><a href="{{ route('slider') }}">Manage Slider</a></li>
+                        <li><a href="{{ route('gallery') }}">Manage Gallery</a></li>
+                        <li><a href="{{ route('site-info') }}">Site Basic Info</a></li>
                     </ul>
                 </li>
 
@@ -117,6 +141,19 @@
                         </li>
                     </ul>
                 </li>
+                @else
+                    <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="fa fa-user-friends"></i>
+                            <span>Participants</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li><a href="{{ route('district-wise-participants') }}">District Wise</a></li>
+                            <li><a href="{{ route('division-wise-participants') }}">Divisional</a></li>
+                            <li><a href="{{ route('category-wise-participants') }}">Category Wise</a></li>
+                        </ul>
+                    </li>
+                @endif
 
             </ul>
         </div>

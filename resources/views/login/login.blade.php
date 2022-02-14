@@ -28,8 +28,8 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="text-success p-4">
-                                    <h5 class="text-success">Welcome Back to {{ config('app.name') }}</h5>
-                                    <p>Sign in to continue to BDPhO.</p>
+                                    <h5 class="text-success">Welcome Back to {{ siteInfo('short_title') }}</h5>
+                                    <p>Sign in to continue to {{ siteInfo('short_title') }}.</p>
                                 </div>
                             </div>
                             <div class="col-4 align-self-end">
@@ -43,7 +43,7 @@
                                 <div class="avatar-md profile-user-wid mb-4">
                                     <span class="avatar-title rounded-circle bg-light">
 {{--                                        <img src="{{ asset('assets') }}/images/logo.svg" alt="" class="rounded-circle" height="34">--}}
-                                        <img src="{{ asset('assets/images/bdpho/general/bdphologo_small.png')}}" alt="" class="rounded-circle" height="62">
+                                        <img src="{{ asset(siteInfo('small_logo'))}}" alt="" class="rounded-circle" height="62">
                                     </span>
                                 </div>
                             </a>
